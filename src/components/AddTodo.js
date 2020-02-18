@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
-import { mapStateToProps, mapDispatchToProps } from "../store";
+import { connectComponent } from "../store";
 
 const AddTodo = ({ addTodo }) => {
     const [value, setValue] = useState('');
@@ -22,4 +21,4 @@ const AddTodo = ({ addTodo }) => {
     )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);
+export default connectComponent(AddTodo);
