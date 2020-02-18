@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 
 const initialState = {
     list: [
@@ -46,4 +46,4 @@ export const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default createStore(reducer);
+export default configureStore({ reducer });
