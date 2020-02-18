@@ -1,12 +1,13 @@
 import React from "react";
 import { connectComponent } from "../store";
+import { VisibilityFilters } from '../store/filterSlice';
 
 const FilterTodos = ({ filter, setFilter }) => (
     <div>
-        <span>Show: </span>
-        <button disabled={filter === 'all'} onClick={() => setFilter('all')}>All</button>
-        <button disabled={filter === 'active'} onClick={() => setFilter('active')}>Active</button>
-        <button disabled={filter === 'completed'} onClick={() => setFilter('completed')}>Completed</button>
+        <span>Show: {filter}</span>
+        <button disabled={filter === VisibilityFilters.SHOW_ALL} onClick={() => setFilter(VisibilityFilters.SHOW_ALL)}>All</button>
+        <button disabled={filter === VisibilityFilters.SHOW_ACTIVE} onClick={() => setFilter(VisibilityFilters.SHOW_ACTIVE)}>Active</button>
+        <button disabled={filter === VisibilityFilters.SHOW_COMPLETED} onClick={() => setFilter(VisibilityFilters.SHOW_COMPLETED)}>Completed</button>
     </div>
 );
 

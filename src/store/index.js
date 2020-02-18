@@ -1,20 +1,17 @@
-import { combineReducers, createStore } from 'redux';
-import { configureStore} from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
 import { connect } from 'react-redux';
-import { list, filter } from './reducers';
+import { configureStore } from '@reduxjs/toolkit';
+import { listReducer, addTodo, toggleStatus } from './listSlice';
+import { filterReducer, setFilter } from './filterSlice';
 
-const reducer = combineReducers({ list, filter });
+export const connectComponent = (ctrl) => connect(
+    state => state,
+    { addTodo, toggleStatus, setFilter }
+)(ctrl);
 
-const mapStateToProps = state => state;
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addTodo: (title) => dispatch({ type: 'ADD_TODO', title }),
-        setFilter: (filter) => dispatch({ type: 'SET_FILTER', filter }),
-        toggleStatus: (id) => dispatch({ type: 'TOGGLE_STATE', id }),
-    }
-}
-
-export const connectComponent = (ctrl) => connect(mapStateToProps, mapDispatchToProps)(ctrl);
-
-export default configureStore({reducer});
+export default configureStore({
+    reducer: combineReducers({
+        list: listReducer,
+        filter: filterReducer
+    })
+});

@@ -9,7 +9,7 @@ const AddTodo = ({ addTodo }) => {
         if (!value) return;
         addTodo(value);
         setValue('');
-    }
+    };
 
     return (
         <div>
@@ -18,7 +18,7 @@ const AddTodo = ({ addTodo }) => {
                 <button type="submit">Add Todo</button>
             </form>
         </div>
-    )
+    );
 }
 
 export default connectComponent(AddTodo);
