@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { mapStateToProps, mapDispatchToProps } from "../store";
 
-export default ({ onAdd }) => {
+const AddTodo = ({ addTodo }) => {
     const [value, setValue] = useState('');
 
     const onSubmit = (e) => {
         e.preventDefault();
-        onAdd(value);
+        if (!value) return;
+        addTodo(value);
         setValue('');
     }
 
@@ -18,3 +21,5 @@ export default ({ onAdd }) => {
         </div>
     )
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);
