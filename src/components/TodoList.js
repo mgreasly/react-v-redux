@@ -1,13 +1,12 @@
 import React from "react";
-import { connect } from 'react-redux';
-import { mapStateToProps, mapDispatchToProps } from "../store";
+import { connectComponent } from "../store";
 
 const Item = ({ item, toggleStatus }) => {
     const style = { textDecoration: item.completed ? 'line-through' : '' };
     return <li style={style}><a href='#' onClick={() => toggleStatus(item.id)}>{item.id}. {item.title}</a></li>
 }
 
-const ConnectedItem = connect(mapStateToProps, mapDispatchToProps)(Item);
+const ConnectedItem = connectComponent(Item);
 
 const List = ({ list, filter }) => {
     return (
@@ -23,4 +22,4 @@ const List = ({ list, filter }) => {
     )
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default connectComponent(List);

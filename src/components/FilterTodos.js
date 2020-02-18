@@ -1,6 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
-import { mapStateToProps, mapDispatchToProps } from "../store";
+import { connectComponent } from "../store";
 
 const FilterTodos = ({ filter, setFilter }) => (
     <div>
@@ -11,4 +10,4 @@ const FilterTodos = ({ filter, setFilter }) => (
     </div>
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterTodos);
+export default connectComponent(FilterTodos);
