@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { connectComponent } from "../store";
+import { useDispatch } from 'react-redux';
+import { ACTIONS } from '../store/reducers';
 
-const AddTodo = ({ addTodo }) => {
+export default () => {
+    const dispatch = useDispatch();
     const [value, setValue] = useState('');
 
     const onSubmit = (e) => {
         e.preventDefault();
         if (!value) return;
-        addTodo(value);
+        dispatch({ type: ACTIONS.ADDTODO, title: value })
         setValue('');
     }
 
@@ -20,5 +22,3 @@ const AddTodo = ({ addTodo }) => {
         </div>
     )
 }
-
-export default connectComponent(AddTodo);

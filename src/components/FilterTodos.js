@@ -1,13 +1,17 @@
 import React from "react";
-import { connectComponent } from "../store";
+import { useDispatch, useSelector } from 'react-redux';
+import { ACTIONS } from '../store/reducers';
 
-const FilterTodos = ({ filter, setFilter }) => (
-    <div>
-        <span>Show: </span>
-        <button disabled={filter === 'all'} onClick={() => setFilter('all')}>All</button>
-        <button disabled={filter === 'active'} onClick={() => setFilter('active')}>Active</button>
-        <button disabled={filter === 'completed'} onClick={() => setFilter('completed')}>Completed</button>
-    </div>
-);
+export default () => {
+    const dispatch = useDispatch();
+    const filter = useSelector(state => state.filter);
 
-export default connectComponent(FilterTodos);
+    return (
+        <div>
+            <span>Show: </span>
+            <button disabled={filter === 'all'} onClick={() => dispatch({ type: ACTIONS.SETFILTER, filter: 'all' })}>All</button>
+            <button disabled={filter === 'active'} onClick={() => dispatch({ type: ACTIONS.SETFILTER, filter: 'active' })}>Active</button>
+            <button disabled={filter === 'completed'} onClick={() => dispatch({ type: ACTIONS.SETFILTER, filter: 'completed' })}>Completed</button>
+        </div>
+    )
+};

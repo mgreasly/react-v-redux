@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from 'redux';
 import { connect } from 'react-redux';
-import { list, filter } from './reducers';
+import { ACTIONS, list, filter } from './reducers';
 
 const reducer = combineReducers({ list, filter });
 
@@ -8,9 +8,9 @@ const mapStateToProps = state => state;
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTodo: (title) => dispatch({ type: 'ADD_TODO', title }),
-        setFilter: (filter) => dispatch({ type: 'SET_FILTER', filter }),
-        toggleStatus: (id) => dispatch({ type: 'TOGGLE_STATE', id }),
+        addTodo: (title) => dispatch({ type: ACTIONS.ADDTODO, title }),
+        setFilter: (filter) => dispatch({ type: ACTIONS.SETFILTER, filter }),
+        toggleStatus: (id) => dispatch({ type: ACTIONS.TOGGLESTATE, id }),
     }
 }
 
