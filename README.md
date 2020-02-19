@@ -9,7 +9,7 @@ Implemented with state - held in App and passed to the child components.
 Implemented with Redux. Using ...connect syntax.
 
 ## redux-hooks
-todo...
+Taken implementation from bas react and used hooks instead.
 
 ## redux-toolkit
 Implemented with Redux-Toolkit.
