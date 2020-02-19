@@ -9,7 +9,7 @@ export default () => {
     const onSubmit = (e) => {
         e.preventDefault();
         if (!value) return;
-        dispatch({ type: ACTIONS.ADDTODO, title: value })
+        dispatch({ type: ACTIONS.ADDTODO, title: value });
         setValue('');
     }
 
