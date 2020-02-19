@@ -1,6 +1,11 @@
-import { combineReducers, createStore } from 'redux';
-import { list, filter } from './reducers';
+import { combineReducers } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import { listReducer } from './listSlice';
+import { filterReducer } from './filterSlice';
 
-const reducer = combineReducers({ list, filter });
-
-export default createStore(reducer);
+export default configureStore({
+    reducer: combineReducers({
+        list: listReducer,
+        filter: filterReducer
+    })
+});

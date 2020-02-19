@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { ACTIONS } from '../store/reducers';
+import { addTodo } from '../store/listSlice';
 
 export default () => {
     const dispatch = useDispatch();
@@ -9,7 +9,7 @@ export default () => {
     const onSubmit = (e) => {
         e.preventDefault();
         if (!value) return;
-        dispatch({ type: ACTIONS.ADDTODO, title: value });
+        dispatch(addTodo(value));
         setValue('');
     }
 

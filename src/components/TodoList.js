@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { ACTIONS } from '../store/reducers';
+import { toggleStatus } from '../store/listSlice';
 
 const Item = ({ item }) => {
     const dispatch = useDispatch();
     const style = { textDecoration: item.completed ? 'line-through' : '' };
     return (
         <li style={style}>
-            <a href='#' onClick={() => dispatch({ type: ACTIONS.TOGGLESTATE, id: item.id })}>
+            <a href='#' onClick={() => dispatch(toggleStatus(item.id))}>
                 {item.id}. {item.title}
             </a>
         </li>
