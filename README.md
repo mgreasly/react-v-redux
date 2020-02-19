@@ -14,5 +14,8 @@ Taken implementation from bas react and used hooks instead.
 ## redux-toolkit
 Implemented with Redux-Toolkit.
 
+## redux-hooks-toolkit
+Merged the hooks and toolkit implementations (so, probably the final state).
+
 ## Note: 
 Created from [nano-react-app](https://github.com/adrianmcli/nano-react-app). 
