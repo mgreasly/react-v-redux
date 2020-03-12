@@ -17,5 +17,8 @@ Implemented with Redux-Toolkit.
 ## redux-hooks-toolkit
 Merged the hooks and toolkit implementations (so, probably the final state).
 
+## redux-zero
+Bonus branch, using redux-zero instead of redux...
+
 ## Note: 
 Created from [nano-react-app](https://github.com/adrianmcli/nano-react-app). 
