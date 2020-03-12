@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { connect } from "redux-zero/react";
+import { actions, mapToProps } from "./store";
 
-export default ({ onAdd }) => {
+export default connect(mapToProps, actions)(({ addTask }) => {
     const [value, setValue] = useState('');
 
     const onSubmit = (e) => {
         e.preventDefault();
-        onAdd(value);
+        addTask(value);
         setValue('');
     }
 
@@ -17,4 +19,4 @@ export default ({ onAdd }) => {
             </form>
         </div>
     )
-}
+});
