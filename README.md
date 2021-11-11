@@ -21,4 +21,4 @@ Merged the hooks and toolkit implementations (so, probably the final state).
 Bonus branch, using redux-zero instead of redux...
 
 ## Note: 
-Created from [nano-react-app](https://github.com/adrianmcli/nano-react-app). 
+Created from [nano-react-app](https://github.com/nano-react-app/nano-react-app).
