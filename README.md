@@ -1,8 +1,8 @@
 # react-v-redux
 
-Working through redux and redux-toolkit. So, the classic todos app. What's in the branches?
+Working through redux and redux-toolkit. So, the classic todos app. What's in here?
 
-## master
+## state
 Implemented with state - held in App and passed to the child components.
 
 ## redux
@@ -18,7 +18,7 @@ Implemented with Redux-Toolkit.
 Merged the hooks and toolkit implementations (so, probably the final state).
 
 ## redux-zero
-Bonus branch, using redux-zero instead of redux...
+Bonus implementation, using redux-zero instead of redux...
 
 ## Note: 
 Created from [nano-react-app](https://github.com/nano-react-app/nano-react-app).
