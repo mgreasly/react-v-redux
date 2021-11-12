@@ -5,9 +5,9 @@ export const ACTIONS = {
 };
 
 export const list = (state = [
-    { id: 1, title: 'first', completed: false },
-    { id: 2, title: 'second', completed: true },
-    { id: 3, title: 'third', completed: false },
+    { id: 1, title: 'redux first', completed: false },
+    { id: 2, title: 'redux second', completed: true },
+    { id: 3, title: 'redux third', completed: false },
 ], action) => {
     switch (action.type) {
         case ACTIONS.ADDTODO: {

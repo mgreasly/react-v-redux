@@ -6,7 +6,6 @@ import TodoList from './components/TodoList';
 import FilterTodos from "./components/FilterTodos";
 
 export default () => {
-
     return (
         <Provider store={store}>
             <AddTodo />
