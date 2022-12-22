@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 import State from "./state/App";
 import Redux from "./redux/App";
 import ReduxHooks from "./redux-hooks/App";
@@ -7,7 +7,7 @@ import ReduxToolkit from "./redux-toolkit/App";
 import ReduxHooksToolkit from "./redux-hooks-toolkit/App";
 import ReduxZero from "./redux-zero/App";
 
-ReactDOM.render(
+const App = ()=> (
     <>
         <h1>using State</h1>
         <State />
@@ -28,4 +28,6 @@ ReactDOM.render(
         <ReduxZero />
         <hr />
     </>
-    , document.getElementById("root"));
+);
+
+createRoot(document.getElementById('root')).render(<App />);
