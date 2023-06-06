@@ -17,7 +17,7 @@
         "react-redux": "^8.0.5",
         "redux": "^4.2.0",
         "redux-zero": "^5.1.7",
-        "vite": "^4.0.3"
+        "vite": "^4.0.5"
     },
     "babel": {
         "presets": [
